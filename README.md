@@ -33,7 +33,7 @@ You will need the following installed:
    ```
 2. Change the directory:
   ```bash
-  cd WeatherForecast
+   cd WeatherForecast
   ```
 3. Start the application throw maven:
    Linux/Mac:
