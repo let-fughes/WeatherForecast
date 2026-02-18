@@ -30,7 +30,7 @@ You will need the following installed:
 1. **Clone the repository:**
    ```bash
    git clone [https://github.com/let-fughes/WeatherForecast.git](https://github.com/let-fughes/WeatherForecast.git)
-   
+   ```
 2. Change the directory:
   ```bash
   cd WeatherForecast
@@ -44,4 +44,4 @@ You will need the following installed:
    ```bash
    mvnw.cmd spring-boot:run
    ```
-4. Open [http://localhost:8081/v1/weather] in your browser.
+4. Open http://localhost:8081/v1/weather in your browser.
