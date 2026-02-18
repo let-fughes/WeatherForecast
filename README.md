@@ -39,11 +39,11 @@ You will need the following installed:
    <br>
    **Linux/macOS:**
    ```bash
-   ./mvnw spring-boot:run
+   ./mvnw spring-boot:run -Dspring-boot.run.arguments="--api.weatherstack.key=your_api_key --api.openweathermap.key=your_other_key"
    ```
   **Windows:**
   ```bash
-  mvnw.cmd spring-boot:run
+  mvnw.cmd spring-boot:run -Dspring-boot.run.arguments="--api.weatherstack.key=YOUR_KEY --api.openweather.key=YOUR_KEY"
   ```
 **Or you can run it throw the Docker:**
 3. **Build docker image:**
