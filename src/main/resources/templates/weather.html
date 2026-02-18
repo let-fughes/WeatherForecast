@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ru" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Klimashevich-Kiryl">
+    <link rel="icon" type="image/png" th:href="@{/icon.png}" href="/static/icon.png">
+    <link rel="stylesheet" href="/static/weather.css" th:href="@{/weather.css}">
+    <title>Weather Dashboard</title>
+</head>
+<body>
+
+<div class="source-selector">
+    <div class="dropdown">
+        <button class="dropbtn" id="current-source" th:text="${currentSourceName}">OpenWeather</button>
+        <div class="dropdown-content">
+            <a th:href="@{/v1/weather/openweather(city=${city})}" onclick="changeSource('OpenWeather')">OpenWeather</a>
+            <a th:href="@{/v1/weather/weatherbit(city=${city})}" onclick="changeSource('WeatherbitAPI')">WeatherbitAPI</a>
+        </div>
+    </div>
+</div>
+
+ <div class="app-container">
+     <div class="forecast-section">
+         <div th:each="day : ${dailyForecast}" class="forecast-row">
+             <span class="f-date" th:text="${#dates.format(new java.util.Date(day.dt * 1000), 'EEE, MMM d')}">Date</span>
+
+             <span class="f-desc" th:text="${day.description}">Description</span>
+
+             <span class="f-temp" th:text="${#numbers.formatDecimal(day.temp, 1, 0)} + '°'">0°</span>
+         </div>
+     </div>
+
+<div class="current-section">
+    <div class="temp-big" th:text="${#numbers.formatDecimal(current.temp, 1, 0)} + '°'">8°</div>
+
+    <div class="desc-big" th:text="${current.description}">Clear Sky</div>
+
+    <div class="details-box">
+        <div class="detail-item">
+            <span>Feels Like</span>
+            <strong th:text="${#numbers.formatDecimal(current.feelsLike, 1, 0)} + '°C'">--</strong>
+        </div>
+        <div class="detail-item">
+            <span>Humidity</span>
+            <strong th:text="${current.humidity} + '%'">--</strong>
+        </div>
+        <div class="detail-item">
+            <span>Wind</span>
+            <strong th:text="${current.speed} + ' m/s'">--</strong>
+        </div>
+        <div class="detail-item">
+            <span>Pressure</span>
+            <strong th:text="${current.pressure} + ' hPa'">--</strong>
+        </div>
+    </div>
+</div>
+</div>
+
+<button class="city-btn" onclick="changeCity()">
+    <span th:text="${city}">Minsk</span>
+</button>
+
+<script th:inline="javascript">
+    function changeCity() {
+        const newCity = prompt("Enter city name:");
+        const currentSource = document.getElementById('current-source').innerText;
+        if (newCity && newCity.trim() !== "") {
+            let endpoint = currentSource === 'WeatherbitAPI' ? 'weatherbit' : 'openweather';
+            window.location.href = '/v1/weather/' + endpoint + '?city=' + encodeURIComponent(newCity);
+        }
+    }
+</script>
+</body>
+</html>

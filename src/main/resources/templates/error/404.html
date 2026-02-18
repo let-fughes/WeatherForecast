@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Kiry-Klimashevich">
+    <title>404 - Page Not Found</title>
+    <link rel="icon" type="image/png" th:href="@{/icon.png}" href="/static/icon.png">
+    <link rel="stylesheet" href="/static/404.css" th:href="@{/404.css}">
+</head>
+<body>
+    <div class="error-container">
+        <div class="error-code">404</div>
+        <div class="error-msg">Lost in the Clouds</div>
+        <p class="error-submsg">
+            Oops! The city or page you are looking for doesn't exist. 
+            It might have been moved, or the fog has hidden the way.
+        </p>
+        <a href="/v1/weather/" class="home-btn">Back to Home</a>
+    </div>
+</body>
+</html>
