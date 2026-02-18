@@ -37,15 +37,15 @@ You will need the following installed:
    ```
 3. **Run the application:**
    <br>
-   Linux/macOS:
+   **Linux/macOS:**
    ```bash
    ./mvnw spring-boot:run
    ```
-  Windows:
+  **Windows:**
   ```bash
   mvnw.cmd spring-boot:run
   ```
-Or you can run it throw the Docker:
+**Or you can run it throw the Docker:**
 3. **Build docker image:**
   ```bash
   docker build -t weather-dashboard .
