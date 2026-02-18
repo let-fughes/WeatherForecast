@@ -29,7 +29,7 @@ You will need the following installed:
 
 1. **Clone the repository:**
    ```bash
-   git clone [https://github.com/let-fughes/WeatherForecast.git](https://github.com/let-fughes/WeatherForecast.git)
+   git clone https://github.com/let-fughes/WeatherForecast.git
    ```
 2. Change the directory:
   ```bash
