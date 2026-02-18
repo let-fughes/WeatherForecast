@@ -39,11 +39,11 @@ You will need the following installed:
    <br>
    **Linux/macOS:**
    ```bash
-   ./mvnw spring-boot:run -Dspring-boot.run.arguments="--api.weatherstack.key=your_api_key --api.openweathermap.key=your_other_key"
+   ./mvnw spring-boot:run -Dspring-boot.run.arguments="--weatherbit.api.key=your_api_key --openweather.api.key=your_other_key"
    ```
   **Windows:**
   ```bash
-  mvnw.cmd spring-boot:run -Dspring-boot.run.arguments="--api.weatherstack.key=YOUR_KEY --api.openweather.key=YOUR_KEY"
+  mvnw.cmd spring-boot:run -Dspring-boot.run.arguments="--weatherbit.api.key=YOUR_KEY --openweather.api.key=YOUR_KEY"
   ```
 **Or you can run it throw the Docker:**
 3. **Build docker image:**
@@ -53,8 +53,8 @@ You will need the following installed:
 4. **Run it:**
    ```bash
    docker run -p 8081:8081 \
-    -e OPENWEATHER_API_KEY=ваш_ключ_1 \
-    -e WEATHERBIT_API_KEY=ваш_ключ_2 \
+    -e OPENWEATHER_API_KEY=key_1 \
+    -e WEATHERBIT_API_KEY=key_2 \
     weather-dashboard
    ```
 ## Tech Stack
